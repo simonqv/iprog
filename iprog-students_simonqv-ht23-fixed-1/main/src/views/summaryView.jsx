@@ -1,6 +1,6 @@
 // un-comment when needed:
-//import {sortIngredients} from "/src/utilities.js";
-//import "/src/style.css"
+import {sortIngredients} from "/src/utilities.js";
+import "/src/style.css"
 
 /* Functional JSX component. Name must start with capital letter */
 function SummaryView(props){
@@ -12,7 +12,7 @@ function SummaryView(props){
               
               <table>
                   {  //  <---- in JSX/HTML, with this curly brace, we go back to JavaScript, and make a comment
-                  /*  The rest of the file is for TW1.5. If you are at TW1.2, wait!  
+                  /*  The rest of the file is for TW1.5. If you are at TW1.2, wait!  */
 
                 <thead>
                   <tr>
@@ -23,13 +23,13 @@ function SummaryView(props){
                   </tr>
                 </thead>
 
-                  */}
+                  }
                 
                 <tbody>
                   {  //  <---- in JSX/HTML, with this curly brace, we go back to JavaScript expressions
                       // TODO: un-comment and pass the CB below for array rendering!
                       
-                      // props.ingredients.map(TODO)
+                      sortIngredients(props.ingredients).map(ingredientTableRowCB)
 
                       // TODO once the table rendering works, sort ingredients before mapping. Import the needed function from utilities.js  
                   }
@@ -42,11 +42,11 @@ function SummaryView(props){
       This JS feature is called "function hoisting".
     */
     function ingredientTableRowCB(ingr){
-        return <tr key={ /* TODO what's a key? */ingr.id } >
+        return <tr key={ /* TODO what's a key? */ingr.id} >
                  <td>{ingr.name}</td>
-                 <td>TODO aisle</td>
-                 <td class="TODO">TODO qty {/* multiply by number of people! Display with 2 decimals, use a CSS classs to align right */}</td>
-                 <td> TODO unit </td>
+                 <td>{ingr.aisle}</td>
+                 <td class="TODO" style={{textAlign: 'right'}}> {(ingr.amount * props.people).toFixed(2)} {/* multiply by number of people! Display with 2 decimals, use a CSS classs to align right */}</td>
+                 <td> {ingr.unit} </td>
                </tr>;
     }
 }
