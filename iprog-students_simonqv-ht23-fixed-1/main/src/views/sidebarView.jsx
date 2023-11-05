@@ -2,20 +2,17 @@ import {compareIngredientsCB, sortIngredients, sortDishes, shoppingList, menuPri
 import "/src/style.css"
 
 
-//function onNumberChange(change) {
-//    console.log(change)
-//}
 
 function SidebarView(props) {
     
-    function minusClickedACB(evt) {props.onNumberChange(evt.target.value);}
-    function plusClickedACB(evt) {props.onNumberChange(evt.target.value);}
+    function minusClickedACB(evt) {props.onNumberChange(props.number-1);}
+    function plusClickedACB(evt) {props.onNumberChange(props.number+1);}
 
     return (
         <div class="debug">
-            <button onClick={minusClickedACB} disabled={props.number === 1} title="decrease" value={props.number-1}>{"-"}</button>
+            <button onClick={minusClickedACB} disabled={props.number === 1} title="decrease">{"-"}</button>
             {props.number}
-            <button onClick={plusClickedACB} title="increase" value={props.number+1}>{"+"}</button>
+            <button onClick={plusClickedACB} title="increase">{"+"}</button>
             <table>
                 <tbody>
                     {
