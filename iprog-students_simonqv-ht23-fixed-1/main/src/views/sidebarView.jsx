@@ -9,7 +9,7 @@ function SidebarView(props) {
     function plusClickedACB(evt) {props.onNumberChange(props.number+1);}
 
     return (
-        <div class="debug">
+        <div className="debug">
             <button onClick={minusClickedACB} disabled={props.number === 1} title="decrease">{"-"}</button>
             {props.number}
             <button onClick={plusClickedACB} title="increase">{"+"}</button>
