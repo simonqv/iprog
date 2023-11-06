@@ -1,7 +1,7 @@
 /* compare two ingredients, for sorting */
 function compareIngredientsCB(ingredientA, ingredientB){
     // each ingredient object has aisle and name properties.
-    // TODO: compare ingredients by supermarket aisle. If the aisles are the same, compare them by name
+    // compare ingredients by supermarket aisle. If the aisles are the same, compare them by name
     // see Array.sort() documentation
     if (ingredientA.aisle > ingredientB.aisle) {
         return 1;
@@ -15,7 +15,7 @@ function compareIngredientsCB(ingredientA, ingredientB){
         }
         return 0;    
     }
-    // TODO find the export line below and export this function!
+    // find the export line below and export this function!
 }
 
 
@@ -24,7 +24,7 @@ function compareIngredientsCB(ingredientA, ingredientB){
   Note that sort() will change the original array. To avoid that, use [...ingredients] which creates a new array and spreads the elements of the `ingredients` array.
 */
 function sortIngredients(ingredients){
-    return [...ingredients].sort(compareIngredientsCB) // TODO
+    return [...ingredients].sort(compareIngredientsCB) 
 }
 
 // helper object for isKnownType and dish sorting
@@ -36,7 +36,7 @@ const dishTypeRanking={
 };
 
 function isKnownTypeCB(type){
-    // TODO look up type in dishTypeRanking. In case it is found, return true (or truthy, i.e. anything not falsy, see below).
+    // look up type in dishTypeRanking. In case it is found, return true (or truthy, i.e. anything not falsy, see below).
     // otherwise return falsy (false, 0, undefined, or "")
     // Remember the object[key] syntax! It returns undefined if the key is not present in the object.
     // Optional: using truthy / falsy you can write this without if() ! 
@@ -48,7 +48,6 @@ function isKnownTypeCB(type){
   If a known type cannot be determined, return "" 
 */
 function dishType(dish){
-    // TODO
     if (Array.isArray(dish.dishTypes)) {
         return dish.dishTypes.find(isKnownTypeCB) || "";
     } else { return ""; }
@@ -110,9 +109,9 @@ function shoppingList(dishes){
         }
     }
 
-    const arrayOfIngredientArrays= dishes.map(keepJustIngredientsCB/*TODO pass the callback that transforms a dish to its ingredients */);
+    const arrayOfIngredientArrays= dishes.map(keepJustIngredientsCB/* pass the callback that transforms a dish to its ingredients */);
     const allIngredients= arrayOfIngredientArrays.flat();    
-    allIngredients.forEach(ingredientCB/* TODO: pass the callback that treats an ingredient */);
+    allIngredients.forEach(ingredientCB/* pass the callback that treats an ingredient */);
 
     // Note: the 3 lines above can be written as a function chain:
     // dishes.map(callback1).flat().forEach(callback2);
@@ -124,20 +123,20 @@ function shoppingList(dishes){
 
 /* Given a dish array, calculate their total price with a map-reduce callback exercise */
 function menuPrice(dishesArray){
-    // TODO callback1: given a dish, return its price. Look in /test/dishesConst.js to find out the name of the dish price property. 
+    // callback1: given a dish, return its price. Look in /test/dishesConst.js to find out the name of the dish price property. 
     function getPriceOfDishCB(dish) {
         return dish.pricePerServing;
     }
-    // TODO callback2, with two parameters. Return the sum of the parameters
+    // callback2, with two parameters. Return the sum of the parameters
     function sumCostCB(a, b) {
         return a + b;
     }
-    // TODO set proper names to the callbacks!
+    // set proper names to the callbacks!
     
-    // TODO 1) call dishesArray.map() with callback1 as argument. This will return an array of prices.
+    // 1) call dishesArray.map() with callback1 as argument. This will return an array of prices.
     const prices = dishesArray.map(getPriceOfDishCB);
 
-    // TODO 2) on the array of prices, call reduce() with callback2 as first parameter, and 0 as second parameter (we compute the total starting from zero).
+    // 2) on the array of prices, call reduce() with callback2 as first parameter, and 0 as second parameter (we compute the total starting from zero).
     const totalCost = prices.reduce(sumCostCB, 0);
     //        This will produce the total price, which you return
     return totalCost;
