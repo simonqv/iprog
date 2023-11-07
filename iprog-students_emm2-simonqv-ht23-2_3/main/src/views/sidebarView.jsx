@@ -2,7 +2,6 @@ import {dishType, sortDishes, menuPrice} from "/src/utilities.js";
 import "/src/style.css"
 
 function SideBarView(props) {
-    console.log(props)
     return (
         <div>
             <button onClick={() => numberChangeACB(-1)} disabled={props.number < 2}>-</button>

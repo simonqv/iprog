@@ -11,7 +11,6 @@ export default {  // we export a JavaScript object: { p1:v1, p2:v2, method(param
     
     setNumberOfGuests(nr){
         // if() and throw exercise
-        console.log(nr)
 
         // work with this.numberOfGuests
         
