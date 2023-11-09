@@ -6,3 +6,26 @@
 .right-align {
     text-align: right;
 }
+
+.search-result {
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.search-result-object {
+    width: 30%; /* Adjust this value based on your requirements */
+    vertical-align: top;
+    margin: 10px;
+
+}
+
+.img-align {
+    margin: 10px; /* Use a unit like px or % */
+}
+
+.rowC {
+    display:flex; 
+    flex-direction:row;
+}
