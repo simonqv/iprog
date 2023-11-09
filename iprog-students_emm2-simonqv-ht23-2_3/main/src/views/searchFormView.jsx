@@ -1,24 +1,18 @@
 
+import  { useState } from 'react';
+
 function SearchFormView(props) {
-    const searchValues = {
-        query: "",
-        dishType: "",
-        setQuery(str) {
-            if (str){
-                this.query = str
-            }
-        },
-        setDish(dish) {
-            if (dish) {
-                this.dishType = dish
-            }
-        }
-    }
+    
+    const [formValues, setFormValues] = useState({
+        query: props.text ? props.text : "",
+        dishType: props.type ? props.type : "",
+    });
+
 
     return (
         <div>
-            <input onInput={inputACB} type="text" value={searchValues[query]}></input>
-            <select onInput={selectACB} value={searchValues[dishType]}>
+            <input onInput={inputACB} type="text" value={formValues.query} ></input>
+            <select onInput={selectACB} value={formValues.dishType}>
                 <option>Choose:</option>
                 {props.dishTypeOptions.map(dishCB)}
             </select>
@@ -27,20 +21,21 @@ function SearchFormView(props) {
     )
 
     function inputACB(evt) {
-        console.log(evt)
+        setFormValues({...formValues,
+            query: evt.target.value})
     }
 
     function searchACB(evt) {
-        console.log(evt)
+        return formValues
     }
 
     function selectACB(evt) {
-        return evt.target.value
+        setFormValues({...formValues,
+            dishType: evt.target.value})
     }
 
     function dishCB(dishType) {
         return <option key={dishType}>{dishType}</option>
-        
     }
 }
 
