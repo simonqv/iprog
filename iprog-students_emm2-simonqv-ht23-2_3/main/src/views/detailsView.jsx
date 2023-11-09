@@ -26,9 +26,12 @@ function DetailsView(props) {
             </tbody>
         </table>
         {console.log(props.dishData)}
+        {console.log(props)}
         {props.dishData.instructions}
+        <br/>
         <a href={props.dishData.sourceUrl} target="_blank">More information</a>
-        <button>Add to menu!</button>
+        <br/>
+        <button disabled={props.isDishInMenu} onClick={addToMenuACB}>Add to menu!</button>
         <button>Cancel</button>
     </div>
    )
@@ -44,13 +47,8 @@ function DetailsView(props) {
         )
    }
 
-   function priceCB() {
-        return (
-            <div>
-                <div></div>
-                <div></div>
-            </div>
-        )
+   function addToMenuACB(dish) {
+        props.addToMenu(dish)
    }
 }
 
