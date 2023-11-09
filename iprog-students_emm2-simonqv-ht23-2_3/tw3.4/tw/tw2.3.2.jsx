@@ -36,14 +36,14 @@ if(getMenuDetails && DetailsView){
                                 <DetailsView dishData={dish1}
                                              isDishInMenu={true}
                                              guests={7}
-                                             FIXMEcustomEvent={addToMenuACB}
+                                             addToMenu={addToMenuACB}
                                 />
                               </div>
                               <div style={{flex:"0.5", padding:"20px"}}>
                                 <DetailsView dishData={dish2}
                                              isDishInMenu={false}
                                              guests={3}
-                                             FIXMEcustomEvent={addToMenuACB}
+                                             addToMenu={addToMenuACB}
                                 />
                               </div>
                             </div>
