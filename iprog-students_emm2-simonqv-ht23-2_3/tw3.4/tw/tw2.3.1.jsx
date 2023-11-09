@@ -30,7 +30,7 @@ if(SearchResultsView){
         function displayResultsACB(results){
             render(<div>{preamble}
                    <SearchResultsView searchResults={results}
-                   FIXMEcustomEvent={function resultChosenACB(searchResult){ console.log("user chose searchResult: ", JSON.stringify(searchResult)); }}
+                   onDishSelect={function resultChosenACB(searchResult){ console.log("user chose searchResult: ", JSON.stringify(searchResult)); }}
                    /></div>
                 , document.getElementById('root')
             );
