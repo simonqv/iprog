@@ -3,8 +3,8 @@ function SearchFormView(props) {
 
     return (
         <div>
-            <input onInput={searchTextACB} onChange={searchTextACB} value={props.text ? props.text : ""} ></input>
-            <select onInput={searchTypeACB} onChange={searchTypeACB} value={props.type ? props.type : ""}>
+            <input onChange={searchTextACB} value={props.text ? props.text : ""} ></input>
+            <select onChange={searchTypeACB} value={props.type ? props.type : ""}>
                 <option value="">Choose:</option>
                 {props.dishTypeOptions.map(dishCB)}
             </select>
