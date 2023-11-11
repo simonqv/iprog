@@ -1,4 +1,6 @@
 import { should } from "chai";
+import resolvePromise from "./resolvePromise";
+import { searchDishes, getDishDetails } from "./dishSource";
 
 /* 
    The Model keeps only abstract data and has no notions of graphics or interaction
@@ -8,6 +10,9 @@ export default {  // we export a JavaScript object: { p1:v1, p2:v2, method(param
     numberOfGuests: 2,
     dishes: [],
     currentDish: null,
+    searchParams: {},
+    searchResultsPromiseState: {},
+    currentDishPromiseState: {},
     
     setNumberOfGuests(nr){
         // if() and throw exercise
@@ -52,9 +57,32 @@ export default {  // we export a JavaScript object: { p1:v1, p2:v2, method(param
        So we store also abstract data that will influence the application status.
      */
     setCurrentDish(id){
-        this.currentDish=id;
+        if (id && id !== this.currentDish){
+            this.currentDish=id;
+            this.currentDishPromiseState =  resolvePromise(getDishDetails(id), this.currentDishPromiseState) 
+        }
+        
         // note that we are adding a new object property (currentDish) which was not initialized in the constructor
     },
     // more methods will be added here, don't forget to separate them with comma!
+    
+    setSearchQuery(query) {
+        this.searchParams.query = query;
+    },
+
+    setSearchType(type) {
+        console.log("type")
+        this.searchParams.type = type;
+    },
+
+    doSearch(searchParams) {
+        console.log("search")
+        
+        this.searchResultsPromiseState = resolvePromise(searchDishes(searchParams), this.searchResultsPromiseState)
+        console.log(this.searchResultsPromiseState)
+    },
+
+    
 }
+
 
