@@ -16,7 +16,7 @@ function getMenuDetails(dishes) {
 
 }
 
-// Return recipe information about one dishe
+// Return recipe information about one dish
 function getDishDetails(id) {
 
     return getMenuDetails([id]).then(getDishACB)

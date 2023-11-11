@@ -16,7 +16,6 @@ function SearchResultView(props) {
             </span>
         )
         function dishClickACB() {
-            console.log(dish)
             props.onDishSelect(dish)
         } 
     }

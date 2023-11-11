@@ -25,8 +25,6 @@ function DetailsView(props) {
                 {props.dishData.extendedIngredients.map(ingredientsCB)}
             </tbody>
         </table>
-        {console.log(props.dishData)}
-        {console.log(props)}
         <p style={{margin: "10px 0"}}>{props.dishData.instructions}</p>
         <a href={props.dishData.sourceUrl} target="_blank" >More information</a>
         <br/>
@@ -36,7 +34,6 @@ function DetailsView(props) {
    )
 
    function ingredientsCB(ingredient) {
-        // console.log(ingredient)
         return (
             <tr key={ingredient.id}>
                 <td>{ingredient.name}:</td>
@@ -46,8 +43,8 @@ function DetailsView(props) {
         )
    }
 
-   function addToMenuACB(dish) {
-        props.addToMenu(dish)
+   function addToMenuACB() {
+        props.addToMenu(props.dishData)
    }
 }
 

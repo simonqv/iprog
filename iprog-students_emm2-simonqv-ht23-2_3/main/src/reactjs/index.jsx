@@ -30,5 +30,6 @@ createRoot(document.getElementById('root'))
 //window.myModel=model;             // make the model available in the Console
 window.myModel=reactiveModel;  
 
-
+// Do initial search
+reactiveModel.doSearch({})
 

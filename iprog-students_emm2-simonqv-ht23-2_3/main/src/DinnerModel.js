@@ -1,4 +1,3 @@
-import { should } from "chai";
 import resolvePromise from "./resolvePromise";
 import { searchDishes, getDishDetails } from "./dishSource";
 
@@ -13,7 +12,7 @@ export default {  // we export a JavaScript object: { p1:v1, p2:v2, method(param
     searchParams: {},
     searchResultsPromiseState: {},
     currentDishPromiseState: {},
-    
+
     setNumberOfGuests(nr){
         // if() and throw exercise
 
@@ -71,15 +70,11 @@ export default {  // we export a JavaScript object: { p1:v1, p2:v2, method(param
     },
 
     setSearchType(type) {
-        console.log("type")
         this.searchParams.type = type;
     },
 
     doSearch(searchParams) {
-        console.log("search")
-        
         this.searchResultsPromiseState = resolvePromise(searchDishes(searchParams), this.searchResultsPromiseState)
-        console.log(this.searchResultsPromiseState)
     },
 
     
