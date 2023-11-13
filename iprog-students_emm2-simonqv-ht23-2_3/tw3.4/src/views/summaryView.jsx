@@ -4,8 +4,9 @@ import "/src/style.css"
 /* Functional JSX component. Name must start with capital letter */
 function SummaryView(props){
     return (
-            <div className="debug">
+            <div className="summary">
               Summary for <span title="nr guests">{props.people}</span> persons:
+              <button style={{float: "right"}} onClick={backToSearchACB}>Back to Search</button>
               
               <table>
                   {  //  <---- in JSX/HTML, with this curly brace, we go back to JavaScript, and make a comment
@@ -40,6 +41,10 @@ function SummaryView(props){
                  <td className="right-align">{(ingr.amount*props.people).toFixed(2)/* multiply by number of people! Display with 2 decimals, use a CSS classs to align right */}</td>
                  <td>{ingr.unit}</td>
                </tr>;
+    }
+    
+    function backToSearchACB() {
+      window.location.hash = "#/search"
     }
 }
 

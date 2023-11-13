@@ -3,6 +3,11 @@
     border-style:solid;
 }
 
+.summary {
+    border-style:solid;
+    min-width: 400px;
+}
+
 .right-align {
     text-align: right;
 }
