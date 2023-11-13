@@ -9,6 +9,7 @@ function SearchFormView(props) {
                 {props.dishTypeOptions.map(dishCB)}
             </select>
             <button onClick={searchACB}>Search!</button>
+            <button  style={{float: "right"}} onClick={summaryACB}>Summary</button>
         </div>
     )
 
@@ -23,6 +24,10 @@ function SearchFormView(props) {
 
     function searchACB(evt) {
         props.onClickSearchACB()
+    }
+
+    function summaryACB(evt) {
+        window.location.hash="#/summary"
     }
 
     // For rendering the dish types
