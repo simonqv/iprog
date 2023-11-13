@@ -43,8 +43,11 @@
 
 .sidebar {
     flex: 0 0 200px;
-
+    border-style:solid;
+    margin-right: 7px; 
+    padding: 4px;
 }
+
 .mainContent {
     flex: 1
 }
