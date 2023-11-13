@@ -35,3 +35,18 @@
     font-weight: bold;
     font-size: larger;
 }
+
+.sidebar {
+    flex: 0 0 200px;
+
+}
+.mainContent {
+    flex: 1
+}
+
+@media (min-width: 550px){ 
+    .flexParent {
+        display:flex;
+        flex-direction: row;
+    }
+}
