@@ -3,6 +3,11 @@
     border-style:solid;
 }
 
+.summary {
+    border-style:solid;
+    min-width: 400px;
+}
+
 .right-align {
     text-align: right;
 }
@@ -34,4 +39,22 @@
     margin-bottom: 10px; 
     font-weight: bold;
     font-size: larger;
+}
+
+.sidebar {
+    flex: 0 0 200px;
+    border-style:solid;
+    margin-right: 7px; 
+    padding: 4px;
+}
+
+.mainContent {
+    flex: 1
+}
+
+@media (min-width: 550px){ 
+    .flexParent {
+        display:flex;
+        flex-direction: row;
+    }
 }

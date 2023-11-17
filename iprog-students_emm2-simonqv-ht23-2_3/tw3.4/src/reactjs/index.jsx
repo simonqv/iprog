@@ -1,4 +1,8 @@
 import "/src/teacherFetch.js"; // protection against fetch() in infinite re-render
+import "/src/firebaseModel.js"
+import { reaction } from "mobx";
+import connectToFirebase from "../firebaseModel.js";
+
 
 // (1) ------------ application state (model) -----------
 import model from '/src/DinnerModel.js';
@@ -33,3 +37,4 @@ window.myModel=reactiveModel;
 // Do initial search
 reactiveModel.doSearch({})
 
+connectToFirebase(model, reaction)
