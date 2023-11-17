@@ -37,4 +37,4 @@ window.myModel=reactiveModel;
 // Do initial search
 reactiveModel.doSearch({})
 
-connectToFirebase(model, reaction)
+connectToFirebase(reactiveModel, reaction)
