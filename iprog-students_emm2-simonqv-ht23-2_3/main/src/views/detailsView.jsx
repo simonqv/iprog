@@ -9,7 +9,7 @@ import "/src/style.css"
 import { menuPrice } from "/src/utilities.js";
 
 function DetailsView(props) {
-   return (
+    return (
     <div>
         <div className="title">{props.dishData.title}</div>
         <div className="rowC">
@@ -29,11 +29,11 @@ function DetailsView(props) {
         <a href={props.dishData.sourceUrl} target="_blank" >More information</a>
         <br/>
         <button disabled={props.isDishInMenu} onClick={addToMenuACB} style={{margin: "10px 15px 0px 0px"}}>Add to menu!</button>
-        <button>Cancel</button>
+        <button onClick={cancelACB} >Cancel</button>
     </div>
-   )
-
-   function ingredientsCB(ingredient) {
+    )  
+    
+    function ingredientsCB(ingredient) {
         return (
             <tr key={ingredient.id}>
                 <td>{ingredient.name}:</td>
@@ -41,10 +41,15 @@ function DetailsView(props) {
                 <td>{ingredient.unit}</td>
             </tr>
         )
-   }
+    }
 
-   function addToMenuACB() {
+    function addToMenuACB() {
         props.addToMenu(props.dishData)
+        window.location.hash = "#/search"
+    }
+
+   function cancelACB() {
+    window.location.hash = "#/search"
    }
 }
 
