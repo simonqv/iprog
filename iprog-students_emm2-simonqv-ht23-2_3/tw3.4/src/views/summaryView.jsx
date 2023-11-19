@@ -6,7 +6,7 @@ function SummaryView(props){
     return (
             <div className="summary">
               Summary for <span title="nr guests">{props.people}</span> persons:
-              <button style={{float: "right"}} onClick={backToSearchACB}>Back to Search</button>
+              <button className="button-style" style={{float: "right"}} onClick={backToSearchACB}>Back to Search</button>
               
               <table>
                   {  //  <---- in JSX/HTML, with this curly brace, we go back to JavaScript, and make a comment

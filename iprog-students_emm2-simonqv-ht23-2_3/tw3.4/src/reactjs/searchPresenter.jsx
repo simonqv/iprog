@@ -30,7 +30,7 @@ observer(
             }
 
             if (!state.data && !state.error) {
-                return <img src="https://brfenergi.se/iprog/loading.gif"></img>
+                return <div style={{display: "flex"}}><img src="https://brfenergi.se/iprog/loading.gif"></img></div>
             }
 
             if (state.error) {

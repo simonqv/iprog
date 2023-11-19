@@ -4,9 +4,9 @@ import "/src/style.css"
 function SideBarView(props) {
     return (
         <div>
-            <button onClick={() => numberChangeACB(-1)} disabled={props.number < 2}>-</button>
-            {props.number}
-            <button onClick={() => numberChangeACB(1)}>+</button>
+            <button className="button-style" onClick={() => numberChangeACB(-1)} disabled={props.number < 2}>-</button>
+            <span style={{margin: "0 2px"}}> {props.number} {props.number < 2 ? "person" : "people"} </span>
+            <button className="button-style" onClick={() => numberChangeACB(1)}>+</button>
             <table>
                 <tbody>
                     {
@@ -37,7 +37,7 @@ function SideBarView(props) {
 
     function dishTableRowCB(dish) {
         return <tr key={dish.id}>
-            <td><button onClick={() => xClickedACB(dish)}>X</button></td>
+            <td><button className="button-style" onClick={() => xClickedACB(dish)}>X</button></td>
             <td><a href="#/details" onClick={() => dishClickedACB(dish)}>{dish.title}</a></td>
             <td>{dishType(dish)}</td>
             <td className="right-align">{(dish.pricePerServing*props.number).toFixed(2)}</td>

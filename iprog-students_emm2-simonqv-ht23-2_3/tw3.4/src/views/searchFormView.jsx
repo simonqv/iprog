@@ -8,8 +8,8 @@ function SearchFormView(props) {
                 <option value="">Choose:</option>
                 {props.dishTypeOptions.map(dishCB)}
             </select>
-            <button onClick={searchACB}>Search!</button>
-            <button style={{float: "right"}} onClick={summaryACB}>Summary</button>
+            <button className="button-style" onClick={searchACB}>Search!</button>
+            <button className="button-style" style={{float: "right"}} onClick={summaryACB}>Summary</button>
         </div>
     )
 

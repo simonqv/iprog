@@ -23,7 +23,12 @@
     width: 30%; /* Adjust this value based on your requirements */
     vertical-align: top;
     margin: 10px;
+    cursor: pointer;
 
+}
+
+.button-style {
+    cursor: pointer;
 }
 
 .img-align {

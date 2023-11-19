@@ -28,8 +28,8 @@ function DetailsView(props) {
         <p style={{margin: "10px 0"}}>{props.dishData.instructions}</p>
         <a href={props.dishData.sourceUrl} target="_blank" >More information</a>
         <br/>
-        <button disabled={props.isDishInMenu} onClick={addToMenuACB} style={{margin: "10px 15px 0px 0px"}}>Add to menu!</button>
-        <button onClick={cancelACB} >Cancel</button>
+        <button className="button-style" disabled={props.isDishInMenu} onClick={addToMenuACB} style={{margin: "10px 15px 0px 0px"}}>Add to menu!</button>
+        <button className="button-style" onClick={cancelACB} >Cancel</button>
     </div>
     )  
     

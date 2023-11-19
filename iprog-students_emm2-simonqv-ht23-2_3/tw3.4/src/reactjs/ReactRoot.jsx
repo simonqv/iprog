@@ -39,7 +39,7 @@ observer(
         //    props.model.doSearch({});
         //}, []); // The empty dependency array ensures that this effect runs only once after the initial render
        
-        return /*props.model.ready ?*/   <div className="flexParent">
+        return props.model.ready ?  <div className="flexParent">
                     <div className="sidebar"><SideBar model={props.model}/></div>
                     <RouterProvider router={makeRouter(props.model)}>
                         <div className="mainContent">
@@ -49,7 +49,7 @@ observer(
                         </div>
                     </RouterProvider>
                 </div> 
-                //: 
-                //<img src="https://brfenergi.se/iprog/loading.gif"/>;
+                : 
+                <img src="https://brfenergi.se/iprog/loading.gif"/>;
     },
 )
