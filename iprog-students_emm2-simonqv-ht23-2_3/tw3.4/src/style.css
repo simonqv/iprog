@@ -1,0 +1,65 @@
+/* A debug class, used to separate components graphically during development */
+.debug {
+    border-style:solid;
+}
+
+.summary {
+    border-style:solid;
+    min-width: 400px;
+}
+
+.right-align {
+    text-align: right;
+}
+
+.search-result {
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.search-result-object {
+    width: 30%; /* Adjust this value based on your requirements */
+    vertical-align: top;
+    margin: 10px;
+    cursor: pointer;
+
+}
+
+.button-style {
+    cursor: pointer;
+}
+
+.img-align {
+    margin: 10px; /* Use a unit like px or % */
+}
+
+.rowC {
+    display:flex; 
+    flex-direction:row;
+}
+
+.title {
+    margin-bottom: 10px; 
+    font-weight: bold;
+    font-size: larger;
+}
+
+.sidebar {
+    flex: 0 0 200px;
+    border-style:solid;
+    margin-right: 7px; 
+    padding: 4px;
+}
+
+.mainContent {
+    flex: 1
+}
+
+@media (min-width: 550px){ 
+    .flexParent {
+        display:flex;
+        flex-direction: row;
+    }
+}
